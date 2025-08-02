@@ -65,7 +65,7 @@ const FeaturedGames: React.FC = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {games.map((game, index) => (
-            <div key={index} className="bg-dark-gray rounded-[20px] overflow-hidden hover:transform hover:scale-105 transition-all duration-300 cursor-pointer group relative">
+            <div key={index} className="bg-gray-900 rounded-[20px] overflow-hidden hover:transform hover:scale-105 transition-all duration-300 cursor-pointer group relative">
               {/* Original Card Content - Unchanged */}
               <div className="w-full h-70 relative overflow-hidden">
                 <img 
