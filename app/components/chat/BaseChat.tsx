@@ -340,27 +340,52 @@ export const BaseChat = React.forwardRef<HTMLDivElement, BaseChatProps>(
     const baseChat = (
       <div
         ref={ref}
-        className={classNames(styles.BaseChat, 'relative flex h-full w-full overflow-hidden')}
+        className={classNames(styles.BaseChat, 'relative flex h-full w-full ')}
         data-chat-visible={showChat}
       >
         <ClientOnly>{() => <Menu />}</ClientOnly>
         <div className="flex flex-col lg:flex-row overflow-y-auto w-full h-full">
           <div className={classNames(styles.Chat, 'flex flex-col flex-grow lg:min-w-[var(--chat-min-width)] h-full')}>
             {!chatStarted && (
-              <div id="intro" className="mt-[16vh] max-w-2xl mx-auto text-center px-4 lg:px-0">
-                <h1 className="text-3xl lg:text-6xl font-bold text-bolt-elements-textPrimary mb-4 animate-fade-in">
-                  Build Worlds, Skip the
-                  <br />
-                  <span className="text-emerald-400">
-                    &lt;<span className="relative inline-block">
-                      Code
-                      <span className="absolute top-1/2 left-0 w-full h-0.5 bg-red-500 transform -translate-y-1/2"></span>
-                    </span>&gt;
-                  </span>
-                </h1>
-                <p className="text-md lg:text-xl mb-8 text-bolt-elements-textSecondary animate-fade-in animation-delay-200">
-                  Create amazing games with AI assistance - no programming required.
-                </p>
+              <div id="intro" className="mt-[24vh] max-w-2xl mx-auto text-center px-4 lg:px-0 relative">
+                {/* Left Background */}
+                <img
+                  src="/leftbg.svg"
+                  alt="left background"
+                  className="absolute left-0 top-5/4 transform -translate-y-1/2 -translate-x-full h-full w-auto z-0 pointer-events-none select-none"
+                  style={{ 
+                    minHeight: '100vh',
+                    maxHeight: '100vh',
+                    width: 'auto',
+                    height: '100%'
+                  }}
+                  aria-hidden="true"
+                />
+                
+                {/* Right Background */}
+                <img
+                  src="/rightbg.svg"
+                  alt="right background"
+                  className="absolute right-0 top-5/4 transform -translate-y-1/2 translate-x-full h-full w-auto z-0 pointer-events-none select-none"
+                  style={{ 
+                    minHeight: '100vh',
+                    maxHeight: '100vh',
+                    width: 'auto',
+                    height: '100%'
+                  }}
+                  aria-hidden="true"
+                />
+                
+                <div className="relative z-10">
+                  <h1 className="text-5xl md:text-5xl font-clash-medium text-white mb-4">
+                    Build Worlds, Skip the
+                    <br />
+                    <span className="text-neon-green">&lt;code&gt;</span>
+                  </h1>
+                  <p className="text-gray-300 font-poppins font-light text-lg opacity-50">
+                    Create amazing games with AI assistance – no programming required.
+                  </p>
+                </div>
               </div>
             )}
             <StickToBottom
