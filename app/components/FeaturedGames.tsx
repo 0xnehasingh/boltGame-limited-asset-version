@@ -93,28 +93,28 @@ const FeaturedGames: React.FC = () => {
                     <svg className="w-4 h-4" fill="none" stroke="#66FF00" strokeWidth={2} viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                     </svg>
-                    <span className="text-white text-xs font-medium">{game.stats.likes}</span>
+                    <span className="text-neon-green text-xs font-medium">{game.stats.likes}</span>
                   </div>
                   
                   <div className="flex flex-col items-center space-y-1">
                     <svg className="w-4 h-4" fill="none" stroke="#66FF00" strokeWidth={2} viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
                     </svg>
-                    <span className="text-white text-xs font-medium">{game.stats.users}</span>
+                    <span className="text-neon-green text-xs font-medium">{game.stats.users}</span>
                   </div>
                   
                   <div className="flex flex-col items-center space-y-1">
                     <svg className="w-4 h-4" fill="none" stroke="#66FF00" strokeWidth={2} viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M8 5v14l11-7z" />
                     </svg>
-                    <span className="text-white text-xs font-medium">{game.stats.plays}</span>
+                    <span className="text-neon-green text-xs font-medium">{game.stats.plays}</span>
                   </div>
                   
                   <div className="flex flex-col items-center space-y-1">
                     <svg className="w-4 h-4" fill="none" stroke="#66FF00" strokeWidth={2} viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                     </svg>
-                    <span className="text-white text-xs font-medium">{game.stats.code}</span>
+                    <span className="text-neon-green text-xs font-medium">{game.stats.code}</span>
                   </div>
                 </div>
               </div>
