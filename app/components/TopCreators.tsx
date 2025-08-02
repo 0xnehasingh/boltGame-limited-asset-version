@@ -76,7 +76,7 @@ const TopCreators: React.FC = () => {
         {/* Creators Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-35">
           {creators.map((creator) => (
-            <div key={creator.id} className={`bg-dark-gray rounded-[20px] overflow-hidden hover:transform hover:scale-105 transition-all duration-300 cursor-pointer group border border-transparent hover:border-2 ${creator.borderColor}`}>
+            <div key={creator.id} className={`bg-gray-900 rounded-[20px] overflow-hidden hover:transform hover:scale-105 transition-all duration-300 cursor-pointer group border border-transparent hover:border-2 ${creator.borderColor}`}>
               {/* Profile Picture Area */}
               <div className="relative px-3 pt-3">
                 <div className="w-full h-48 relative overflow-hidden bg-gray-800 rounded-2xl">
