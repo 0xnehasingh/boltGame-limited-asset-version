@@ -63,41 +63,22 @@ export const ChatBox: React.FC<ChatBoxProps> = (props) => {
   return (
     <div
       className={classNames(
-        'relative bg-gray-900 backdrop-blur p-3 rounded-lg border border-bolt-elements-borderColor relative w-full max-w-chat mx-auto z-prompt',
-
+        'relative bg-gray-900 p-1 rounded-2xl relative w-full max-w-chat mx-auto z-prompt',
         /*
          * {
          *   'sticky bottom-2': chatStarted,
          * },
          */
       )}
+      style={{
+        border: '2px solid transparent',
+        borderRadius: '20px',
+        background: 'linear-gradient(#141313, #141313) padding-box, linear-gradient(252.01deg, #8EFE49 -1.57%, rgba(115, 205, 59, 0.3) 7.95%, rgba(85, 152, 44, 0.1) 85.16%, #8EFE49 119.37%) border-box',
+        backgroundClip: 'padding-box, border-box',
+        backgroundOrigin: 'padding-box, border-box'
+      }}
     >
-      <svg className={classNames(styles.PromptEffectContainer)}>
-        <defs>
-          <linearGradient
-            id="line-gradient"
-            x1="20%"
-            y1="0%"
-            x2="-14%"
-            y2="10%"
-            gradientUnits="userSpaceOnUse"
-            gradientTransform="rotate(-45)"
-          >
-            <stop offset="0%" stopColor="#10b981" stopOpacity="0%"></stop>
-            <stop offset="40%" stopColor="#10b981" stopOpacity="80%"></stop>
-            <stop offset="50%" stopColor="#10b981" stopOpacity="80%"></stop>
-            <stop offset="100%" stopColor="#10b981" stopOpacity="0%"></stop>
-          </linearGradient>
-          <linearGradient id="shine-gradient">
-            <stop offset="0%" stopColor="white" stopOpacity="0%"></stop>
-            <stop offset="40%" stopColor="#ffffff" stopOpacity="80%"></stop>
-            <stop offset="50%" stopColor="#ffffff" stopOpacity="80%"></stop>
-            <stop offset="100%" stopColor="white" stopOpacity="0%"></stop>
-          </linearGradient>
-        </defs>
-        <rect className={classNames(styles.PromptEffectLine)} pathLength="100" strokeLinecap="round"></rect>
-        <rect className={classNames(styles.PromptShine)} x="48" y="24" width="70" height="1"></rect>
-      </svg>
+      
       <FilePreview
         files={props.uploadedFiles}
         imageDataList={props.imageDataList}
@@ -133,14 +114,14 @@ export const ChatBox: React.FC<ChatBoxProps> = (props) => {
         </div>
       )}
       <div
-        className={classNames('relative shadow-xs border border-bolt-elements-borderColor backdrop-blur rounded-lg bg-gray-900')}
+        className={classNames('relative shadow-xs  rounded-lg bg-gray-900')}
       >
         <textarea
           ref={props.textareaRef}
           className={classNames(
-            'w-full pl-4 pt-4 pr-16 outline-none resize-none text-bolt-elements-textPrimary placeholder-bolt-elements-textTertiary bg-transparent text-sm',
+            'w-full h-44 bg-gray-900 rounded-xl p-4 text-white placeholder-gray-400 resize-none focus:outline-none',
             'transition-all duration-200',
-            'hover:border-bolt-elements-focus',
+            'hover:border-neon-green',
           )}
           onDragEnter={(e) => {
             e.preventDefault();
@@ -224,10 +205,14 @@ export const ChatBox: React.FC<ChatBoxProps> = (props) => {
             />
           )}
         </ClientOnly>
-        <div className="flex justify-between items-center text-sm p-4 pt-2">
-          <div className="flex gap-1 items-center">
-            <IconButton title="Upload file" className="transition-all" onClick={() => props.handleFileUpload()}>
+        <div className="flex justify-between items-center text-sm p-4 pt-0">
+          <div className="flex gap-3 items-center">
+            <IconButton title="Upload file" className="transition-all text-gray-400 hover:text-neon-green" onClick={() => props.handleFileUpload()}>
               <div className="i-ph:paperclip text-xl"></div>
+            </IconButton>
+
+            <IconButton title="Voice input" className="transition-all text-gray-400 hover:text-neon-green">
+              <div className="i-ph:microphone text-xl"></div>
             </IconButton>
 
             <SpeechRecognitionButton
@@ -255,9 +240,9 @@ export const ChatBox: React.FC<ChatBoxProps> = (props) => {
             )}
           </div>
           {props.input.length > 3 ? (
-            <div className="text-xs text-bolt-elements-textTertiary">
-              Use <kbd className="kdb px-1.5 py-0.5 rounded bg-bolt-elements-background-depth-2">Shift</kbd> +{' '}
-              <kbd className="kdb px-1.5 py-0.5 rounded bg-bolt-elements-background-depth-2">Return</kbd> a new line
+            <div className="text-xs text-gray-400">
+              Use <kbd className="kdb px-1.5 py-0.5 rounded bg-gray-800">Shift</kbd> +{' '}
+              <kbd className="kdb px-1.5 py-0.5 rounded bg-gray-800">Return</kbd> a new line
             </div>
           ) : null}
           <SupabaseConnection />
