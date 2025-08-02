@@ -1,20 +1,23 @@
-/* Color Tokens Light Theme */
+/* Color Tokens Light Theme - Overridden for dark theme */
 :root,
 :root[data-theme='light'] {
+  /* Neon Green Color */
+  --neon-green: #66FF00;
+  --neon-green-glow: 0 0 10px #66FF00, 0 0 20px #66FF00, 0 0 30px #66FF00;
   --bolt-elements-borderColor: theme('colors.alpha.gray.10');
   --bolt-elements-borderColorActive: theme('colors.accent.600');
 
-  --bolt-elements-bg-depth-1: theme('colors.white');
-  --bolt-elements-bg-depth-2: theme('colors.gray.50');
-  --bolt-elements-bg-depth-3: theme('colors.gray.200');
-  --bolt-elements-bg-depth-4: theme('colors.alpha.gray.5');
+  --bolt-elements-bg-depth-1: rgba(0, 0, 0, 0.95);
+  --bolt-elements-bg-depth-2: rgba(15, 23, 42, 0.9);
+  --bolt-elements-bg-depth-3: rgba(30, 41, 59, 0.85);
+  --bolt-elements-bg-depth-4: rgba(0, 0, 0, 0.1);
 
-  --bolt-elements-textPrimary: theme('colors.gray.950');
-  --bolt-elements-textSecondary: theme('colors.gray.600');
-  --bolt-elements-textTertiary: theme('colors.gray.500');
+  --bolt-elements-textPrimary: rgba(255, 255, 255, 0.95);
+  --bolt-elements-textSecondary: rgba(203, 213, 225, 0.8);
+  --bolt-elements-textTertiary: rgba(148, 163, 184, 0.7);
 
-  --bolt-elements-code-background: theme('colors.gray.100');
-  --bolt-elements-code-text: theme('colors.gray.950');
+  --bolt-elements-code-background: rgba(30, 41, 59, 0.85);
+  --bolt-elements-code-text: rgba(255, 255, 255, 0.95);
 
   --bolt-elements-button-primary-background: theme('colors.alpha.accent.10');
   --bolt-elements-button-primary-backgroundHover: theme('colors.alpha.accent.20');
@@ -109,6 +112,9 @@
 /* Color Tokens Dark Theme */
 :root,
 :root[data-theme='dark'] {
+  /* Neon Green Color */
+  --neon-green: #66FF00;
+  --neon-green-glow: 0 0 10px #66FF00, 0 0 20px #66FF00, 0 0 30px #66FF00;
   --bolt-elements-borderColor: theme('colors.alpha.white.10');
   --bolt-elements-borderColorActive: theme('colors.accent.500');
 

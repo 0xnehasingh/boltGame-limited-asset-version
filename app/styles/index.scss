@@ -7,12 +7,68 @@
 @use 'components/editor.scss';
 @use 'components/toast.scss';
 
-html,
-body {
-  height: 100%;
-  width: 100%;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #0a3d4a 50%, #064e3b 75%, #0f172a 100%);
-  background-attachment: fixed;
+@layer base {
+  html,
+  body {
+    @apply bg-black text-white font-sans;
+    height: 100%;
+    width: 100%;
+  }
+  
+  * {
+    @apply text-white;
+  }
+}
+
+@layer components {
+  .neon-glow {
+    @apply shadow-[0_0_10px_#66FF00,0_0_20px_#66FF00,0_0_30px_#66FF00];
+  }
+  
+  .grid-bg {
+    background-image: 
+      linear-gradient(rgba(102, 255, 0, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(102, 255, 0, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+  
+  .bg-dark-gray {
+    background-color: rgba(15, 23, 42, 0.95);
+  }
+  
+  .text-neon-green {
+    color: #66FF00;
+  }
+  
+  .bg-neon-green {
+    background-color: #66FF00;
+  }
+  
+  .border-neon-green {
+    border-color: #66FF00;
+  }
+  
+  .h-70 {
+    height: 280px;
+  }
+  
+  .font-clash-bold {
+    font-family: 'Clash Display', sans-serif;
+    font-weight: 700;
+  }
+  
+  .font-clash-medium {
+    font-family: 'Clash Display', sans-serif;
+    font-weight: 500;
+  }
+  
+  .font-clash-display {
+    font-family: 'Clash Display', sans-serif;
+  }
+  
+  .font-poppins {
+    font-family: 'Poppins', sans-serif;
+  }
 }
 
 :root {
@@ -66,19 +122,19 @@ body {
   }
 }
 
-// Additional dark theme enhancements for game terminal
+// Force dark theme for entire application
 :root {
-  // Force dark theme colors for game terminal
-  --bolt-elements-bg-depth-1: rgba(15, 23, 42, 0.95);     // slate-900 with transparency
-  --bolt-elements-bg-depth-2: rgba(30, 41, 59, 0.9);      // slate-800 with transparency  
-  --bolt-elements-bg-depth-3: rgba(51, 65, 85, 0.85);     // slate-700 with transparency
+  // Force dark theme colors for entire application
+  --bolt-elements-bg-depth-1: rgba(0, 0, 0, 0.95);     // black with transparency
+  --bolt-elements-bg-depth-2: rgba(15, 23, 42, 0.9);   // slate-900 with transparency  
+  --bolt-elements-bg-depth-3: rgba(30, 41, 59, 0.85);  // slate-800 with transparency
   
   // Dark text colors
-  --bolt-elements-textPrimary: rgba(248, 250, 252, 0.95); // slate-50
+  --bolt-elements-textPrimary: rgba(255, 255, 255, 0.95); // white
   --bolt-elements-textSecondary: rgba(203, 213, 225, 0.8); // slate-300
   --bolt-elements-textTertiary: rgba(148, 163, 184, 0.7);  // slate-400
   
   // Green accent colors
-  --bolt-elements-borderColor: rgba(16, 185, 129, 0.3);    // emerald-500 with transparency
-  --bolt-elements-borderColorActive: rgba(52, 211, 153, 0.8); // emerald-400
+  --bolt-elements-borderColor: rgba(102, 255, 0, 0.3);    // neon green with transparency
+  --bolt-elements-borderColorActive: rgba(102, 255, 0, 0.8); // neon green
 }
