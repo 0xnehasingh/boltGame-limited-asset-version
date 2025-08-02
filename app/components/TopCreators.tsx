@@ -68,7 +68,7 @@ const TopCreators: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 py-sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-clash-display font-bold text-white mb-4">
+          <h2 className="ttext-4xl md:text-5xl font-clash-medium text-white mb-4">
             Top Creators
           </h2>
         </div>
