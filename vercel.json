@@ -1,0 +1,21 @@
+{
+  "buildCommand": "pnpm run build",
+  "outputDirectory": "build/client",
+  "framework": "remix",
+  "installCommand": "pnpm install",
+  "devCommand": "pnpm run dev",
+  "functions": {
+    "app/routes/**/*.tsx": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "env": {
+    "NODE_OPTIONS": "--max-old-space-size=8192"
+  }
+} 
