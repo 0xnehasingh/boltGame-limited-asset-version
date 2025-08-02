@@ -28,17 +28,17 @@ export class ServerPromptLibrary {
     default: {
       label: 'Game Development Prompt',
       description: 'Specialized prompt for HTML5 game development',
-      get: (options) => getSystemPrompt(options.cwd, options.supabase, options.designScheme),
+      get: (options) => getSystemPrompt(options.cwd),
     },
     original: {
       label: 'Fine-Tuned Prompt',
       description: 'General development prompt optimized for less token usage',
-      get: (options) => getSystemPrompt(options.cwd, options.supabase, options.designScheme),
+      get: (options) => getSystemPrompt(options.cwd),
     },
     optimized: {
       label: 'Optimized Prompt (experimental)',
       description: 'An Experimental version of the prompt for lower token usage',
-      get: (options) => getSystemPrompt(options.cwd, options.supabase, options.designScheme),
+      get: (options) => getSystemPrompt(options.cwd),
     },
   };
   
